@@ -1,0 +1,19 @@
+{
+  "name": "restraunt-app-backend",
+  "version": "1.0.0",
+  "description": "backend of restraunt app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest "
+  },
+  "keywords": [
+    "restraunt-react",
+    "nodejs",
+    "sample",
+    "project",
+    "google",
+    "sheets"
+  ],
+  "author": "Kuldeep Kumar",
+  "license": "ISC"
+}
