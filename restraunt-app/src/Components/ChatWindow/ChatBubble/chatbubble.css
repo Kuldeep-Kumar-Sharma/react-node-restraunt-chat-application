@@ -1,0 +1,7 @@
+.chatbubble {
+  border: 1px solid #007aff;
+  background: #007aff;
+  padding: 1%;
+  color: #fff;
+  border-radius: 20px;
+}

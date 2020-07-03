@@ -1,0 +1,27 @@
+.chatBox {
+  position: relative;
+  margin: 1%;
+  padding: 10px 10px;
+  border: 1px solid #ececec;
+  border-radius: 1px;
+  max-height: 80vh;
+  min-height: 50vh;
+  overflow-y: scroll;
+}
+
+.inputum {
+  background-color: #ececec;
+  padding: 2%;
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.w3-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 1px auto !important;
+  margin-top: 10px !important;
+}
