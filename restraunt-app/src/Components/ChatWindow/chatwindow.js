@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+import Chat from "./Chat/chat";
 import "./chatwindow.css";
 
 class ChatWindow extends React.Component {
@@ -9,10 +10,10 @@ class ChatWindow extends React.Component {
     super(props);
     this.state = {
       userInput: "",
-      botOutput: "",
+      data: [],
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
+    this.pushMessage = this.pushMessage.bind(this);
   }
 
   //handling change of input values and setting the state of input
@@ -21,22 +22,20 @@ class ChatWindow extends React.Component {
   }
 
   // handling add the values of input to the array of data for list
-  handleAdd(event) {
-    if (this.state.value !== "") {
-      //   this.setState((prevState) => {
-      //     return {
-      //       value: "",
-      //       data: this.state.data.concat({
-      //         task: prevState.value,
-      //         done: false,
-      //       }),
-      //     };
-      //   });
-      // } else {
-      //   alert("Please Enter the task name Before adding!");
-      // }
-
-      event.preventDefault();
+  pushMessage(event) {
+    event.preventDefault();
+    if (this.state.userInput.value !== "") {
+      var uniq = "id" + new Date().getTime();
+      this.setState((prevState) => {
+        return {
+          uniqueInd: uniq,
+          userInput: "",
+          data: this.state.data.concat({
+            userInput: prevState.userInput,
+            botMessage: "",
+          }),
+        };
+      });
     }
   }
 
@@ -46,6 +45,7 @@ class ChatWindow extends React.Component {
         <h1 className="display-4 text-center"> Very Simple Chatbot </h1>
         <hr />
         <div className="chatBox" id="chatBox">
+          <Chat chat={this.state.data}></Chat>
           <InputGroup className="mb-3">
             <FormControl
               placeholder="please write query.."
@@ -55,7 +55,9 @@ class ChatWindow extends React.Component {
               onChange={this.handleChange}
             />
             <InputGroup.Append>
-              <Button variant="primary">Send</Button>
+              <Button variant="primary" onClick={this.pushMessage}>
+                Send
+              </Button>
             </InputGroup.Append>
           </InputGroup>
         </div>

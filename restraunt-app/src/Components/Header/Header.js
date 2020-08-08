@@ -6,10 +6,7 @@ const Header = (props) => {
   return (
     <Jumbotron>
       <h1>{props.name}</h1>
-      <p>
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
+      <p>Here is an example of simple chatbot integration with dialog flow.</p>
       <p>
         <Button variant="primary">Chat</Button>
       </p>
