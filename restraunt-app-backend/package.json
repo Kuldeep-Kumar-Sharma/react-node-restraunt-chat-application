@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "swagger-ui-express": "^4.1.4"
   }
 }
